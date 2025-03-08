@@ -53,7 +53,7 @@ export default function RootLayout({
                 rel="noopener noreferrer"
               >
                 <span className="relative z-10 flex items-center">
-                  <span className="text-xs font-medium text-[#ACAEB1] mr-2">Made by</span>
+                  <span className="text-xs font-medium text-black dark:text-white mr-2">Made by</span>
                   <Image
                     className="mr-2 group-hover/button:rotate-12 transition-transform duration-300"
                     src="/is-logo.svg"
@@ -61,7 +61,7 @@ export default function RootLayout({
                     width={25}
                     height={25}
                   />
-                  <span className="font-medium text-sm bg-gradient-to-r from-[#DCDDE1] via-[#DCDDE1]/90 to-[#DCDDE1]/80 bg-clip-text text-transparent">
+                  <span className="font-medium text-black dark:text-white  text-sm bg-gradient-to-r from-[#DCDDE1] via-[#DCDDE1]/90 to-[#DCDDE1]/80 bg-clip-text text-transparent">
                     Idan Shlomo
                   </span>
                 </span>
