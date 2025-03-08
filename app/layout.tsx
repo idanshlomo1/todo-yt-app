@@ -61,7 +61,7 @@ export default function RootLayout({
                     width={25}
                     height={25}
                   />
-                  <span className="font-medium text-black dark:text-white  text-sm bg-gradient-to-r from-[#DCDDE1] via-[#DCDDE1]/90 to-[#DCDDE1]/80 bg-clip-text text-transparent">
+                  <span className="font-medium text-black dark:text-white  text-sm  ">
                     Idan Shlomo
                   </span>
                 </span>
