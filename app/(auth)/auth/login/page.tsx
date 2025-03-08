@@ -1,5 +1,6 @@
 import { LoginForm } from "@/components/auth/login-form";
 import { Metadata } from "next";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Login | Task Manager",
@@ -17,7 +18,9 @@ export default function LoginPage() {
           Enter your email and password to sign in to your account
         </p>
       </div>
-      <LoginForm />
+      <Suspense fallback={<div className="text-center">Loading...</div>}>
+        <LoginForm />
+      </Suspense>
     </div>
   );
 }
