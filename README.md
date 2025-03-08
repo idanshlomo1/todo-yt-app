@@ -1,24 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Task Manager App
+
+A full-stack task management application built with Next.js, Prisma, and NextAuth.
+
+## Features
+
+- User authentication (sign up, login, logout)
+- Task management (create, read, update, delete)
+- Protected routes with middleware
+- Responsive design with Shadcn UI
+
+## Prerequisites
+
+- Node.js 18+ and npm
+- PostgreSQL database
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Install required packages for authentication:
+
+```bash
+npm install bcrypt @auth/prisma-adapter
+```
+
+4. Set up your environment variables in `.env`:
+
+```
+DATABASE_URL="your-postgresql-connection-string"
+NEXTAUTH_SECRET="your-nextauth-secret"
+NEXTAUTH_URL="http://localhost:3000"
+```
+
+5. Run database migrations:
+
+```bash
+npx prisma migrate dev
+```
+
+6. Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+7. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `/app` - Next.js app router pages and layouts
+- `/components` - React components
+- `/prisma` - Prisma schema and migrations
+- `/actions` - Server actions for data operations
+- `/lib` - Utility functions and shared code
+- `middleware.ts` - Route protection and authentication checks
+
+## Authentication Flow
+
+The application uses NextAuth.js for authentication with the following features:
+
+- Credential-based authentication (email/password)
+- Protected routes with middleware
+- JWT-based sessions
+- Server-side session validation
+
+The middleware (`middleware.ts`) ensures that:
+- Unauthenticated users cannot access `/app` routes
+- Authenticated users are redirected to the app when trying to access auth pages
+- API routes remain accessible for both authenticated and unauthenticated users
+
+## Technologies Used
+
+- Next.js 14
+- React 18
+- Prisma ORM
+- NextAuth.js
+- Tailwind CSS
+- Shadcn UI
+- TypeScript
 
 ## Learn More
 
