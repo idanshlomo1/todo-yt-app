@@ -14,6 +14,10 @@ export default function LandingPage() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   const features = [
     "Create and manage tasks with ease",
     "Track your progress with intuitive dashboards",
@@ -98,21 +102,21 @@ export default function LandingPage() {
               <Link
                 href="#features"
                 className="block px-3 py-2 rounded-md text-base font-medium text-foreground/60 hover:text-foreground hover:bg-accent"
-                onClick={toggleMenu}
+                onClick={closeMenu}
               >
                 Features
               </Link>
               <Link
                 href="#testimonials"
                 className="block px-3 py-2 rounded-md text-base font-medium text-foreground/60 hover:text-foreground hover:bg-accent"
-                onClick={toggleMenu}
+                onClick={closeMenu}
               >
                 Testimonials
               </Link>
               <Link
                 href="#pricing"
                 className="block px-3 py-2 rounded-md text-base font-medium text-foreground/60 hover:text-foreground hover:bg-accent"
-                onClick={toggleMenu}
+                onClick={closeMenu}
               >
                 Pricing
               </Link>
@@ -120,14 +124,14 @@ export default function LandingPage() {
                 <Link
                   href="/auth/login"
                   className="block px-3 py-2 rounded-md text-base font-medium text-foreground/60 hover:text-foreground hover:bg-accent"
-                  onClick={toggleMenu}
+                  onClick={closeMenu}
                 >
                   Login
                 </Link>
                 <Link
                   href="/auth/sign-up"
                   className="block px-3 py-2 rounded-md text-base font-medium bg-primary text-primary-foreground hover:bg-primary/90"
-                  onClick={toggleMenu}
+                  onClick={closeMenu}
                 >
                   Sign Up
                 </Link>
@@ -139,8 +143,8 @@ export default function LandingPage() {
 
       {/* Hero Section */}
       <section className="flex-1 flex flex-col items-center justify-center py-12 md:py-24 lg:py-32">
-        <div className="container px-4 md:px-6">
-          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:gap-16">
+        <div className="container px-4 md:px-6 mx-auto">
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:gap-16 items-center text-center lg:text-left">
             <div className="flex flex-col justify-center space-y-4">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -217,7 +221,7 @@ export default function LandingPage() {
 
       {/* Features Section */}
       <section id="features" className="py-12 md:py-24 lg:py-32 bg-muted/50">
-        <div className="container px-4 md:px-6">
+        <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -231,7 +235,7 @@ export default function LandingPage() {
               </p>
             </motion.div>
           </div>
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8 md:mt-16">
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-8 md:mt-16">
             {features.map((feature, i) => (
               <motion.div
                 key={i}
@@ -252,14 +256,14 @@ export default function LandingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 md:py-24 lg:py-32">
-        <div className="container px-4 md:px-6">
+      <section id="testimonials" className="py-12 md:py-24 lg:py-32">
+        <div className="container px-4 md:px-6 mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="flex flex-col items-center justify-center space-y-4 text-center"
+            className="flex flex-col items-center justify-center space-y-6 text-center"
           >
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Ready to Get Started?</h2>
@@ -280,9 +284,9 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t py-6 md:py-8">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:gap-6">
+      <footer id="pricing" className="border-t py-6 md:py-8">
+        <div className="container px-4 md:px-6 mx-auto">
+          <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:gap-6 text-center md:text-left">
             <p className="text-center text-sm text-muted-foreground md:text-left">
               © {new Date().getFullYear()} TODO APP YOUTUBE. All rights reserved.
             </p>
